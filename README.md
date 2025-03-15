@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+<img width="1273" alt="pomodoro" src="https://github.com/user-attachments/assets/c73bc7bf-f5bf-4d99-848b-cc29aa8b44a7" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ポモドーロタイマー
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+このプロジェクトでは、ポモドーロタイマーを構築します。
+25 分の作業、５分の休憩を繰り替えすタイマーを実装し、残り時間を表示します。
+時間になったらチャイムが鳴る、一般的なタイマーです。
 
-## Expanding the ESLint configuration
+## 学習目標
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+さまざまな React Hooks を組み合わせた実装を学習します。
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+特に、useRef フックを使ったデータ管理と、useState との使い分けについて確認してください。
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 推奨技術
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+このプロジェクトの難易度と趣旨を踏まえて、以下の使用をお勧めします。
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- vite を用いた React 環境構築
+- TypeScript による型チェック
+- Tailwind CSS を用いたスタイリング
+- useState, useRef を用いた値の管理
+- useEffect による副作用
+- Web Audio API の使用
+- GitHub Pages へのデプロイ
+
+---
+
+## 🎯 お題
+
+- 「ユーザーストーリー」を全て満たす、アプリを構築してください。
+- 必要に応じて、スクリーンショットやデモサイトの URL を、参照してください。
+- なお、スタイルは、あなた自身で独自にカスタマイズすることが可能です。
+
+### 必須機能
+
+1. **タイマー**:
+   - 25 分間の作業と、5 分間の休憩を計測できる。
+   - 残り時間を、秒単位で表示する。
+2. **タイマーの操作**:
+   - ボタンをクリックすると、特定の操作ができるボタンを設置する
+3. **チャイム**:
+   - 継続している時間が０になったら、チャイムが鳴る
+
+## ユーザーストーリー
+
+- [ ] ユーザーがサイトにアクセスすると、タイマーが表示されている
+- [ ] 現在のセッションタイプ（作業/休憩）が明確に表示される
+- [ ] タイマーの残り時間がリアルタイムで表示される
+- [ ] ユーザーは、タイマーを開始、一時停止、再開、リセットできる
+- [ ] ユーザーは、セッションタイプ（作業/休憩）の切り替えができる
+- [ ] タイマー終了時に、サウンド通知が鳴る
+- [ ] タイマー終了時に、セッションモードが切り替わり、自動的にタイマーが開始する
+- [ ] アプリケーションがデプロイされており、誰でもアクセス可能である。
