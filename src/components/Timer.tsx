@@ -1,19 +1,32 @@
 import { Pause, Play, RefreshCcw } from "lucide-react";
 import { ControlButton } from "./ControlButton";
 import { ModeTypeButton } from "./ModeTypeButton";
-import useTimer from "../hooks/useTimer";
+// import useTimer from "../hooks/useTimer";
+import useTimerReducer from "../hooks/useTimerReducer";
 
 const Timer = () => {
+  //   const {
+  //     mode,
+  //     displayMinutes,
+  //     displaySeconds,
+  //     isRunning,
+  //     handleStart,
+  //     handleStop,
+  //     handleReset,
+  //     handleChangeMode,
+  //   } = useTimer();
+
   const {
-    mode,
+    state,
     displayMinutes,
     displaySeconds,
-    isRunning,
     handleStart,
     handleStop,
     handleReset,
     handleChangeMode,
-  } = useTimer();
+  } = useTimerReducer();
+
+  const { mode, isRunning } = state;
 
   return (
     <div
